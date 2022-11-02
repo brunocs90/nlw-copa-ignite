@@ -26,9 +26,12 @@ Aplicação desenvolvida durante o NLW Copa Ignite promovido pela Rocketseat. Ob
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Prisma](https://www.prisma.io/) é um ORM simplifica a modelagem de dados, migrações e acesso a dados para bancos de dados SQL em Node.js e TypeScript.
-.
+
+- [Fastify](https://www.fastify.io/) é um framework web para Node.js com foco em performance ideal para uma arquitetura baseada em microservices.
 
 ```
+npm i fastify
+
 npm i prisma -D
 
 npm i @prisma/client
@@ -38,6 +41,10 @@ npx prisma init --datasource-provider SQLite
 npx prisma migrate dev
 
 npx prisma studio
+
+npm i prisma-erd-generator @mermaid-js/mermaid-cli -D
+
+npx prisma generate
 ```
 
 ## 📥 Instalação
