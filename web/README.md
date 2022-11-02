@@ -27,7 +27,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [NextJs](https://nextjs.org/) é uma estrutura da web de desenvolvimento front-end React que permite funcionalidades como renderização do lado do servidor e geração de sites estáticos para aplicativos da web baseados em React.
 
-```
+```bash
 npx create-next-app@latest --use-npm
 ```
 
@@ -35,12 +35,12 @@ npx create-next-app@latest --use-npm
 
 Faça um clone desse repositório e acesse o diretório. Em instale todas as dependências com o seguinte comando:
 
-```
+```bash
 npm i
 ```
 
 Em seguida execute o servidor rodando
-```
+```bash
 npm run dev
 ```
 

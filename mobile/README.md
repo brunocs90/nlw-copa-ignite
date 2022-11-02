@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Expo](https://expo.dev/) é um conjunto de ferramentas e serviços construídos em torno de plataformas nativas e React Native que ajudam a construir, implantar e iterar rapidamente em aplicativos iOS, Android e web a partir da mesma base de código JavaScript/TypeScript.
 
-```
+```bash
 npx create-expo-app my-app --force
 
 npm install native-base
@@ -46,12 +46,12 @@ npx expo install expo-font @expo-google-fonts/roboto
 
 Faça um clone desse repositório e acesse o diretório. Em instale todas as dependências com o seguinte comando:
 
-```
+```bash
 npm i
 ```
 
 Em seguida execute o app rodando:
-```
+```bash
 npx expo start
 ```
 

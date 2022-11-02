@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Fastify](https://www.fastify.io/) é um framework web para Node.js com foco em performance ideal para uma arquitetura baseada em microservices.
 
-```
+```bash
 npm i fastify
 
 npm i prisma -D
@@ -51,12 +51,12 @@ npx prisma generate
 
 Faça um clone desse repositório e acesse o diretório. Em instale todas as dependências com o seguinte comando:
 
-```
+```bash
 npm i
 ```
 
 Em seguida execute o servidor rodando
-```
+```bash
 npm run dev
 ```
 
