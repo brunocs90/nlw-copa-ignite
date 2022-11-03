@@ -29,6 +29,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ```bash
 npx create-next-app@latest --use-npm
+
+npm i -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
 ```
 
 ## 📥 Instalação

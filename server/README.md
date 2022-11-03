@@ -45,6 +45,8 @@ npx prisma studio
 npm i prisma-erd-generator @mermaid-js/mermaid-cli -D
 
 npx prisma generate
+
+npx prisma db seed
 ```
 
 ## 📥 Instalação
