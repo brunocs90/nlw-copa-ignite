@@ -42,6 +42,14 @@ npx expo install expo-font @expo-google-fonts/roboto
 
 npm i react-native-svg-transformer
 
+npx expo install expo-auth-session expo-random
+
+npx expo install expo-web-browser
+
+npx expo whoami
+
+npm i phosphor-react-native
+
 ```
 
 ## 📥 Instalação
