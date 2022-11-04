@@ -56,6 +56,8 @@ npx expo install react-native-screens react-native-safe-area-context
 
 npm install @react-navigation/bottom-tabs
 
+npm i axios
+
 ```
 
 ## 📥 Instalação

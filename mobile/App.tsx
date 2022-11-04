@@ -11,18 +11,18 @@ import { Routes } from './src/routes';
 
 export default function App() {
 
-	const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_500Medium, Roboto_700Bold });
+  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_500Medium, Roboto_700Bold });
 
-	return (
-		<NativeBaseProvider theme={THEME}>
-			<AuthContextProvider>
-				<StatusBar
-					barStyle='light-content'
-					backgroundColor="transparent"
-					translucent
-				/>
-				{fontsLoaded ? <Routes /> : <Loading />}
-			</AuthContextProvider>
-		</NativeBaseProvider>
-	);
+  return (
+    <NativeBaseProvider theme={THEME}>
+      <AuthContextProvider>
+        <StatusBar 
+          barStyle='light-content'
+          backgroundColor="transparent"
+          translucent
+          />
+        {fontsLoaded ? <Routes /> : <Loading />}
+      </AuthContextProvider>
+    </NativeBaseProvider>
+  );
 }
