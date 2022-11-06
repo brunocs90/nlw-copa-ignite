@@ -24,13 +24,13 @@ interface AuthProviderProps {
 
 export const AuthContext = createContext({} as AuthContexDataProps);
 
-export function AuthContextProvider({ children }) {
+export function AuthContextProvider({ children }: AuthProviderProps) {
 	const [isUserLoading, setIsUserLoading] = useState(false);
 	const [user, setUser] = useState<UserProps>({} as UserProps);
 
 
 	const [request, response, promptAsync] = Google.useAuthRequest({
-		clientId: '195864906374-64sp07ln8uib8gf0rtpac62r8o5dopta.apps.googleusercontent.com',
+		clientId: process.env.CLIENT_ID,
 		redirectUri: AuthSessions.makeRedirectUri({ useProxy: true }),
 		scopes: ['profile', 'email'],
 	});
@@ -48,12 +48,9 @@ export function AuthContextProvider({ children }) {
 	}
 
 	async function singInWithGoogle(access_token: string) {
-		console.log('TOKEN DE AUTENTICAÇÃO ===>', access_token);
+		//console.log('TOKEN DE AUTENTICAÇÃO ===>', access_token);
 		try {
 			setIsUserLoading(true);
-
-			console.log("tentando buscar o token do usuario");
-
 			const tokenResponse = await api.post('/users', { access_token });
 			api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`;
 
