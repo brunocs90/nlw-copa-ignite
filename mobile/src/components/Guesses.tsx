@@ -82,7 +82,7 @@ export function Guesses({ poolId, code }: Props) {
 
 	return (
 		<FlatList
-			data={games}
+			data={games.sort((a, b) => a.date.localeCompare(b.date))}
 			keyExtractor={item => item.id}
 			renderItem={({ item }) => (
 				<Game
