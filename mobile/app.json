@@ -19,9 +19,13 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.brunocs90.nlwcopamobile",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.brunocs90.nlwcopamobile",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -29,6 +33,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "16285c39-c741-41e0-9a7e-c492969e1567"
+      }
     }
   }
 }

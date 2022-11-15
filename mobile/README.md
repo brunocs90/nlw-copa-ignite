@@ -68,6 +68,12 @@ npm i dayjs
 
 npm i dotenv babel-plugin-inline-dotenv
 
+eas build -p android --profile preview
+
+https://docs.expo.dev/guides/authentication/#google
+
+expo run:android
+
 ```
 
 ## 📥 Instalação
