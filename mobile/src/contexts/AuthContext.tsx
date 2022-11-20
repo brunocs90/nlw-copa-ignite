@@ -1,10 +1,8 @@
 import { createContext, ReactNode, useState, useEffect } from 'react';
 import * as Google from 'expo-auth-session/providers/google';
-import * as AuthSessions from 'expo-auth-session';
 import * as WebBrowser from 'expo-web-browser';
 
 import { api } from '../services/api';
-import { Platform } from 'react-native';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -29,28 +27,18 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
 	const [isUserLoading, setIsUserLoading] = useState(false);
 	const [user, setUser] = useState<UserProps>({} as UserProps);
 
-	const useProxy = Platform.select({ web: false, default: true });
-	const redirectUri = AuthSessions.makeRedirectUri({ useProxy });
-
-	const [request, response, promptAsync] = Google.useAuthRequest({
+	const [_, response, googleAuth] = Google.useAuthRequest({
+		expoClientId: process.env.CLIENT_ID_EXPO,
+		iosClientId: process.env.CLIENT_ID_IOS,
 		androidClientId: process.env.CLIENT_ID_ANDROID,
-		expoClientId: process.env.CLIENT_ID,
-		iosClientId: process.env.CLIENT_ID,
+		webClientId: process.env.CLIENT_ID_WEBAPP,
 		selectAccount: true,
-		redirectUri,
-		scopes: ['profile', 'email']
 	});
-
-	// const [request, response, promptAsync] = Google.useAuthRequest({
-	// 	clientId: process.env.CLIENT_ID,
-	// 	redirectUri: AuthSessions.makeRedirectUri({ useProxy: true }),
-	// 	scopes: ['profile', 'email'],
-	// });
 
 	async function singIn() {
 		try {
 			setIsUserLoading(true)
-			await promptAsync({ showInRecents: true });
+			await googleAuth();
 		} catch (error) {
 			console.log(error);
 			throw error;

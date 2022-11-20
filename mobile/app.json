@@ -1,43 +1,42 @@
 {
-	"expo": {
-		"name": "nlwcopamobile",
-		"slug": "nlwcopamobile",
-		"scheme": "com.brunocs90.nlwcopamobile",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./assets/icon.png",
-		"userInterfaceStyle": "light",
-		"splash": {
-			"image": "./assets/splash.png",
-			"resizeMode": "cover",
-			"backgroundColor": "#000"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": [
-			"**/*"
-		],
-		"ios": {
-			"bundleIdentifier": "com.brunocs90.nlwcopamobile",
-			"buildNumber": "1.0.0",
-			"supportsTablet": true
-		},
-		"android": {
-			"package": "com.brunocs90.nlwcopamobile",
-			"versionCode": 1,
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			}
-		},
-		"web": {
-			"favicon": "./assets/favicon.png"
-		},
-		"extra": {
-			"eas": {
-				"projectId": "16285c39-c741-41e0-9a7e-c492969e1567"
-			}
-		}
-	}
+  "expo": {
+    "name": "nlw-copa",
+    "slug": "nlw-copa",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "com.brunocs90.nlwcopa",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brunocs90.nlwcopa"
+    },
+    "android": {
+      "package": "com.brunocs90.nlwcopa",
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7b15ca12-431e-4dfd-bf08-b4a09031c716"
+      }
+    }
+  }
 }
