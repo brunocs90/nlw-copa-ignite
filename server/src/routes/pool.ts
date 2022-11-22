@@ -189,4 +189,11 @@ export async function poolRoutes(fastify: FastifyInstance) {
 
 		return { pool }
 	})
+
+	fastify.get('/pools/list', {
+	}, async () => {
+		const pools = await prisma.pool.findMany()
+
+		return { pools }
+	})
 }

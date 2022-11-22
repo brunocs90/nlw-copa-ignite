@@ -4,6 +4,13 @@ import { prisma } from "../lib/prisma"
 import { authenticate } from "../plugins/authenticate"
 
 export async function gameRoutes(fastify: FastifyInstance) {
+	fastify.get('/games/count', async () => {
+		const count = await prisma.game.count()
+
+		return { count }
+	})
+
+
 	fastify.get('/pools/:id/games', {
 		onRequest: [authenticate]
 	}, async (request) => {
@@ -38,6 +45,13 @@ export async function gameRoutes(fastify: FastifyInstance) {
 				}
 			})
 		}
+	})
+
+	fastify.get('/games/list', {
+	}, async () => {
+		const games = await prisma.game.findMany()
+
+		return { games }
 	})
 
 	fastify.post('/games', { onRequest: [authenticate] }, async (request: any, reply) => {

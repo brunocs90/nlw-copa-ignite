@@ -1,4 +1,4 @@
-import Fastify from "fastify"
+import Fastify from 'fastify';
 import cors from "@fastify/cors"
 import jwt from "@fastify/jwt"
 
@@ -7,28 +7,30 @@ import { authRoutes } from "./routes/auth"
 import { gameRoutes } from "./routes/game"
 import { guessRoutes } from "./routes/guess"
 import { userRoutes } from "./routes/user"
+import { home } from "./routes/home"
 
-async function bootstrap() {
-	const fastify = Fastify({
-		logger: true,
-	})
+const fastify = Fastify({ logger: true, pluginTimeout: 20000 });
 
-	await fastify.register(cors, {
-		origin: true,
-	})
+fastify.register(cors, {
+    origin: true,
+})
 
-	// Em produção isso precisa ser uma viarável de ambiente
-	await fastify.register(jwt, {
-		secret: 'nlwcopa',
-	})
+const secretKeyJwt = process.env.SECRET_KEY_JWT as string
 
-	await fastify.register(poolRoutes)
-	await fastify.register(authRoutes)
-	await fastify.register(gameRoutes)
-	await fastify.register(guessRoutes)
-	await fastify.register(userRoutes)
+fastify.register(jwt, {
+    secret: secretKeyJwt,
+})
 
-	await fastify.listen({ port: 3333/*, host: '0.0.0.0' */ })
-}
+fastify.register(poolRoutes);
+fastify.register(authRoutes);
+fastify.register(gameRoutes);
+fastify.register(guessRoutes);
+fastify.register(userRoutes);
+fastify.register(home);
 
-bootstrap()
+const port = (process.env.PORT ?? 3333) as number;
+const host = (process.env.HOST ?? '0.0.0.0') as string
+
+fastify.listen({ port, host }, (err, address) => {
+    console.log(`Servidor rodando na porta: ${address}`)
+})
